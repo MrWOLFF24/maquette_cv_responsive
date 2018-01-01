@@ -9,18 +9,17 @@
         <meta name="author" content="Haroon">
         <meta name="robots" content="follow">
         <meta name="revisit-after" content="14 days">
-        <link rel="icon" href="assets/images/pacman.gif">
+        <link rel="icon" href="assets/images/death-star.gif">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
-        <link rel="stylesheet" href="assets/css/style.css">
+        <link rel="stylesheet" href="assets/css/pc.css">
         <link rel="stylesheet" href="assets/css/tablette-style.css">
         <link rel="stylesheet" href="assets/css/xs-tablette-style.css">
         <link rel="stylesheet" href="assets/css/smartphone-style.css">
         <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
         <script src="node_modules/smoothscroll/smoothscroll.min.js"></script>
-        <script src="node_modules/parallax-js/dist/parallax.min.js"></script>
         <script src="assets/js/app.js"></script>
     </head>
-    <body>
+    <body role="application">
         <!-- Nav -->
         <section class="nav">
             <div class="menu">
@@ -32,8 +31,15 @@
                 </ul>
             </div>
             <div class="reds"></div>
-            <nav>
-                <ul>
+            <div id="container">
+                <div id="burger">
+                    <div class="bun top"></div>
+                    <div class="filling"></div>
+                    <div class="bun bottom"></div>
+                </div>
+            </div>
+            <nav id="nav" role="navigation">
+                <ul role="menu">
                     <li><a href="#qsuisje">Qui suis-je ?</a></li>
                     <li><a href="#aPropos">A propos</a></li>
                     <li><a href="#competence">Comp&eacute;tences</a></li>
@@ -47,12 +53,11 @@
         <!-- Main content -->
         <div id="wrap">
 
+            <!-- section rosa how i am -->
             <section class="bloc" id="qsuisje">
-                <div id="scene">
-                    <article data-depth="0.3" class="rosa">
+                    <article class="rosa">
                         <h2 class="right titre anim">Je</h2>
                     </article>
-                </div>
                 <article class="txt">
                     <h2 class="left titre">
                         <span class="line anim2">suis</span>
@@ -60,6 +65,7 @@
                 </article>
             </section>
 
+            <!-- section about me -->
             <section class="bloc" id="aPropos">
                 <h3>About</h3>
                 <p class="centre">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, sapiente
@@ -69,10 +75,8 @@
                     Animi aperiam assumenda cumque eos impedit perspiciatis repellat voluptas?
                 </p>
             </section>
-            <!--svg viewBox="0 0 100 100">
-                <path d="M0,0 L0,100 100,40 Z" />
-            </svg-->
 
+            <!-- section technical skill -->
             <section class="bloc" id="competence">
                 <article class="bloc1">
                     <h2 class="titre right position">
@@ -93,14 +97,15 @@
                             </p>
                             <a href="" id="btn" class="btn">Learn More <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                         </article>
-                        <!--div class="back">
+                        <div class="back">
                             <span id="close"><i class="fa fa-times" aria-hidden="true"></i></span>
                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa, ut!</p>
-                        </div-->
+                        </div>
                     </div>
                 </div>
             </section>
 
+            <!-- section my works -->
             <section class="bloc" id="technique">
                 <article class="gauche">
                     <article class="noel">
@@ -118,6 +123,7 @@
                 </article>
             </section>
 
+            <!-- section what i do -->
             <section class="bloc">
                 <h3>What we Do</h3>
                 <p class="centre">
@@ -127,6 +133,8 @@
                 </p>
             </section>
 
+            <!-- section contact -->
+            <div class="bg"></div>
             <section class="bloc ombre" id="contact">
                 <article class="phone">phone</article>
                 <header class="pop">
@@ -137,15 +145,51 @@
                     <a href="" class="btn contact">Contact Me <i class="fa fa-long-arrow-right" aria-hidden="true"></i></a>
                 </p>
             </section>
-
-            <div class="bd">
-
-            </div>
+            <div class="bd"></div>
         </div>
 
             <!-- footer -->
             <footer>
-
+                <div class="menu-footer">
+                    <div class="menu">
+                        <ul>
+                            <li>M</li>
+                            <li>E</li>
+                            <li>N</li>
+                            <li>U</li>
+                        </ul>
+                    </div>
+                    <div class="reds"></div>
+                    <nav>
+                        <ul>
+                            <li><a href="#qsuisje">Homepage</a></li>
+                            <li><a href="#aPropos">About</a></li>
+                            <li><a href="#competence">services</a></li>
+                            <li><a href="#">blog</a></li>
+                            <li><a href="#contact">contact</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <div class="adresse">
+                    <div class="menu">
+                        <ul>
+                            <li>A</li>
+                            <li>D</li>
+                            <li>R</li>
+                            <li>E</li>
+                            <li>S</li>
+                            <li>S</li>
+                            <li>E</li>
+                        </ul>
+                    </div>
+                    <div class="reds"></div>
+                    <ul>
+                        <li>River Oaks Health Systeme</li>
+                        <li>1030 River Oaks Drive</li>
+                        <li>Flowood, MS(Mississippi)39232</li>
+                        <li>(601) 936-1148</li>
+                    </ul>
+                </div>
             </footer>
     </body>
 </html>

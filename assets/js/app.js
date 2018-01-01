@@ -1,9 +1,17 @@
 const app = (function () {
     "use strict";
 
+    const menuHamb = function menuHamb() {
+        const btn = document.getElementById('burger');
+        const nav = document.getElementById('nav');
+        btn.addEventListener('click', function () {
+            btn.classList.toggle("active");
+            nav.classList.toggle("show");
+        });
+    };
+
     const init = function () {
-        const scene = document.getElementById('scene');
-        let parallaxInstance = new Parallax(scene);
+        menuHamb();
     };
 
     window.addEventListener("DOMContentLoaded", init);
