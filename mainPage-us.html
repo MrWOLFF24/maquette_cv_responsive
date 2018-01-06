@@ -12,8 +12,8 @@
         <link rel="icon" href="assets/images/death-star.gif">
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet">
         <link rel="stylesheet" href="assets/css/style.css">
-        <link rel="stylesheet" href="node_modules/font-awesome/css/font-awesome.min.css">
-        <script src="node_modules/smoothscroll/smoothscroll.min.js"></script>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="assets/js/smoothscroll.min.js"></script>
         <script src="assets/js/app.js"></script>
     </head>
     <body role="application">
@@ -169,36 +169,38 @@
                 <div class="modal-content">
                     <span class="close-modal">&times;</span>
                     <h2>Contact me</h2>
-                    <form class="Form" action="form-contact.php" method="post">
+                    <form id="Form" class="Form" action="libs/form-contact.php" enctype="multipart/form-data" method="post">
                         <label class="Label">
-                            <input class="Input" type="text" required minlength="2" placeholder="Name" name="username">
+                            <input id="username" class="Input" type="text" required minlength="2" placeholder="Name" name="username">
                             <svg viewBox="0 0 20 20" class="Icon">
                                 <path d="M0 0 L10 10 L0 20"></path>
                             </svg>
                         </label>
                         <label class="Label">
-                            <input class="Input" type="text" required minlength="2" placeholder="LastName" name="lastname">
+                            <input id="lastname" class="Input" type="text" required minlength="2" placeholder="LastName" name="lastname">
                             <svg viewBox="0 0 20 20" class="Icon">
                                 <path d="M0 0 L10 10 L0 20"></path>
                             </svg>
                         </label>
                         <label class="Label">
-                            <input class="Input" type="email" required placeholder="Email" name="email">
+                            <input id="email" class="Input" type="email" required minlength="6" placeholder="Email" name="email">
                             <svg viewBox="0 0 20 20" class="Icon">
                                 <path d="M0 0 L10 10 L0 20"></path>
                             </svg>
                         </label>
                         <label class="Label">
-                            <textarea class="Input" required placeholder="Your message" name="message"></textarea>
+                            <textarea id="message" class="Input" required minlength="5" placeholder="Your message" name="message"></textarea>
                             <svg viewBox="0 0 20 20" class="Icon">
                                 <path d="M0 0 L10 10 L0 20"></path>
                             </svg>
                         </label>
-                        <button class="Button" type="submit">Send</button>
+                        <button id="sendEmail" class="Button" type="submit">Send</button>
                     </form>
                 </div>
             </div>
         </div>
+
+        <div id="message-mail"></div>
 
         <!-- footer -->
         <footer>

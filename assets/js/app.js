@@ -2,7 +2,48 @@ const app = (function () {
     "use strict";
 
     // variables
-    let flipContainer1, flipContainer2, modal;
+    let flipContainer1, flipContainer2, modal, form;
+
+    // Envoi mail en ajax
+    const sendAJAXMail = function () {
+        const messageBox = document.getElementById("message-mail");
+
+        form.addEventListener("submit", (e) => {
+            e.preventDefault();
+
+            let formData = new FormData(form);
+            const xhr = new XMLHttpRequest();
+
+            xhr.open('POST', 'libs/form-contact.php', true);
+            xhr.onload = function () {
+                if(xhr.readyState === 4 && xhr.status === 200) {
+                    messageBox.style.display = "block";
+                    messageBox.innerHTML = `Votre message a bien été envoyé <span id="close-message">&times;</span>`;
+                    modal.style.display = 'none';
+                    document.querySelector("textarea").value = "";
+                    document.querySelectorAll("input").forEach(function (el) {
+                        el.value = "";
+                    });
+                    const closeBtn = document.getElementById("close-message");
+                    if (closeBtn){
+                        closeBtn.onclick = () => messageBox.style.display = "none";
+                    }
+                    setTimeout(() => {messageBox.style.display = 'none'}, 3000);
+                }else {
+                    messageBox.style.display = 'block';
+                    messageBox.style.background = '#e74c3c';
+                    messageBox.innerHTML = `Votre message n'a pas pu être envoyé <span id="close-message">&times;</span>`;
+
+                    const closeBtn = document.getElementById("close-message");
+                    if (closeBtn){
+                        closeBtn.onclick = () => messageBox.style.display = "none";
+                    }
+                }
+            };
+
+            xhr.send(formData);
+        });
+    };
 
     // modal form contact
     const modalContact = function () {
@@ -71,6 +112,7 @@ const app = (function () {
     };
 
     const init = function () {
+        form = document.getElementById("Form");
         flipContainer1 = document.querySelector(".flip-container");
         flipContainer2 = document.querySelector(".flip-container2");
         modal = document.getElementById("modal");
@@ -81,6 +123,7 @@ const app = (function () {
         closeCard2();
         modalContact();
         closeModal();
+        sendAJAXMail();
     };
 
     window.addEventListener("DOMContentLoaded", init);

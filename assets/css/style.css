@@ -9,6 +9,27 @@ html, body, header, section, div, h2, h3, article, span, p, nav, ul, li, a, foot
     box-sizing: border-box;
     font-family: 'Montserrat', sans-serif;
 }
+div#message-mail {
+    height: 70px;
+    width: 100%;
+    background: #2ecc71;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 2;
+    text-align: center;
+    color: #fff;
+    font-size: 1rem;
+    line-height: 70px;
+    display: none;
+}
+div#message-mail span {
+    font-size: 1.8rem;
+    float: right;
+    cursor: pointer;
+    color: #fff;
+    margin-right: 20px;
+}
 @media screen and (min-width: 960px) {
     body {
         border-top: 2px solid crimson;
@@ -796,7 +817,7 @@ html, body, header, section, div, h2, h3, article, span, p, nav, ul, li, a, foot
         cursor: pointer;
     }
     div.modal-content {
-        margin: 10% auto;
+        margin: 20% auto;
         background: #fff;
         height: 400px;
         padding: 20px;
@@ -1434,7 +1455,7 @@ html, body, header, section, div, h2, h3, article, span, p, nav, ul, li, a, foot
         cursor: pointer;
     }
     div.modal-content {
-        margin: 10% auto;
+        margin: 20% auto;
         background: #fff;
         height: 400px;
         padding: 20px;
@@ -2001,15 +2022,15 @@ html, body, header, section, div, h2, h3, article, span, p, nav, ul, li, a, foot
         position: relative;
         background: none;
         top: 10px;
-        left: 0;
+        left: 50%;
         padding-left: 0;
-        transform: translateX(0%);
+        transform: translateX(-50%);
     }
     div.menu-footer nav ul li {
+        text-align: center;
         line-height: 2px;
         background: none;
         box-shadow: none;
-        margin: 0 0 0 30px;
     }
     div.menu-footer nav ul li a {
         text-shadow: none;
@@ -2065,7 +2086,7 @@ html, body, header, section, div, h2, h3, article, span, p, nav, ul, li, a, foot
         cursor: pointer;
     }
     div.modal-content {
-        margin: 10% auto;
+        margin: 20% auto;
         background: #fff;
         height: 400px;
         padding: 20px;
